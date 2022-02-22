@@ -6,4 +6,4 @@ TRELLO DU PROJET
 
 
 MAQUETTE DU PROJET VERSION MOBILE
-![Maquette-mobile](https://user-images.githubusercontent.com/90333029/155006458-c2618b00-9e3c-44b7-baad-5e2a422520cd.png)
+<img width="949" alt="Maquette-mobile" src="https://user-images.githubusercontent.com/90333029/155130513-63358eb6-da9c-4a06-b729-1a637e3950ba.png">
