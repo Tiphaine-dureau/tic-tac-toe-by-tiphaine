@@ -26,8 +26,8 @@ status.innerHTML = playerTurn();
 
 // Créer pour chaques cases un évènement au clic
 document.querySelectorAll(".box").forEach(cell => cell.addEventListener("click", () => clickbox(cell)));
-// Crer un évènement au click pour le bouton recommencer (pour l'instant l'affiche dans la console)
-document.querySelector(".restart-button").addEventListener("click", () => console.log("restart"));
+// Crer un évènement au click pour le bouton recommencer
+document.querySelector(".restart-button").addEventListener("click", startAgain);
 
 
 function clickbox(cell) {
@@ -59,19 +59,30 @@ function checkWin() {
             break
         }
     }
-    //Si on est sur un tour gagnant et si oui affiche dynamiquement le joueur gagnant et désactive le jeu
+    //Gestion de tour gagnant
     if (winTour) {
         status.innerHTML = winGame()
         activeGame = false;
         return
     }
 
+    //Gestion de l'égalité
     if (!boxStatus.includes("")) {
         status.innerHTML = equality()
         activeGame = false;
         return
     }
+    //Gestion du changement de joueur
     activePlayer = activePlayer === "x" ? "o" : "x"
     status.innerHTML = playerTurn();
 }
-// ARRET 26MIN VIDÉO
+
+function startAgain() {
+    activePlayer = "x";
+    activeGame = true;
+    boxStatus = ["", "", "", "", "", "", "", "", ""];
+    status.innerHTML = playerTurn();
+    document.querySelectorAll(".box").forEach(cell => cell.innerHTML = "");
+
+
+}
