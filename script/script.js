@@ -27,7 +27,7 @@ status.innerHTML = playerTurn();
 // Créer pour chaques cases un évènement au clic
 document.querySelectorAll(".box").forEach(cell => cell.addEventListener("click", () => clickbox(cell)));
 // Crer un évènement au click pour le bouton recommencer
-document.querySelector(".restart-button").addEventListener("click", startAgain);
+document.querySelector(".start-again").addEventListener("click", startAgain);
 
 
 function clickbox(cell) {
