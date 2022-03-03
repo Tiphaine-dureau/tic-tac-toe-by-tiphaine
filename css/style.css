@@ -1,7 +1,16 @@
-.main-container {
-    background-image: url("/img/board-1920-1280.jpg");
-    width: 100%;
-    height: 100%;
+/***** ELEMENTS  COMMUNS AUX PAGES *****/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: Chalkduster, sans-serif;
+    color: white;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
 }
 
 h1, h2 {
@@ -9,130 +18,137 @@ h1, h2 {
     padding: 1.3rem;
 }
 
-body {
-    margin: 0;
-    height: 100vh;
-    text-align: center;
-    font-family: Chalkduster, sans-serif;
-    color: white;
-    background-color: black;
+main {
+    max-width: 1900px;
 }
 
+footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+    margin: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/***** ELEMENTS PAGE ACCUEIL*****/
 .radio-input {
     margin: 0;
     padding: 1rem;
 }
 
-.next-button {
+.button-next-page {
     font-family: Chalkduster, sans-serif;
     background-color: white;
-    margin: 0;
+    margin: 1rem;
 }
 
-.next-button:hover {
+.button-next-page:hover, .button-previous-page:hover{
     background-color: #fdffa5;
 }
 
-.next-button:active {
+.button-next-page:active, .button-previous-page:active{
     background-color: #b6d881;
 }
 
-footer {
+.button-previous-page {
+    background: white;
+    position: fixed;
+    bottom : 5rem;
+    right: 2rem;
+}
+
+#img-previous-page{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/***** ÉLÉMENTS PAGE VS ORDI *****/
+
+.switch-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background-color: #f99865;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 15px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #bae372;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #bae372;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.text-switch {
+    padding: 2rem;
+}
+
+/***** ÉLÉMENTS PAGE VS AMI A CÔTÉ *****/
+
+form{
     padding: 1rem;
-    font-size: 0.6rem;
 }
 
-/* BREAKPOINT POUR ÉLÉMENTS DE LA PAGE */
-@media screen and (max-width: 362px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.25rem;
-    }
-
-    body {
-        padding: 1rem;
-    }
-
-    .radio-input {
-        font-size: 1rem;
-    }
-
-    .next-button {
-        padding: 0.3rem 1rem;
-        font-size: 1rem;
-    }
-
-    .chalk-img {
-        width: 100%;
-        height: 17vh;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        object-fit: cover;
-    }
+fieldset{
+    border: none;
 }
 
-@media screen and (min-width: 363px) and (max-width: 767px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    body {
-        padding: 1.5rem;
-    }
-
-    .radio-input {
-        font-size: 1.25rem;
-    }
-
-    .chalk-img {
-        height: 17vh;
-    }
+#name-x, #name-o, #choice-color-x, #choice-color-o{
+    font-family: Chalkduster, sans-serif;
 }
 
-@media screen and (min-width: 363px) {
-    .next-button {
-        padding: 0.3rem 1rem;
-        font-size: 1.25rem;
-    }
-
-    .chalk-img {
-        width: 80%;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-        object-fit: cover;
-    }
+HR {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 50%;
+    height: 4px;
+    color: white;
+    background-color: white;
 }
 
-@media screen and (min-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 2.125rem;
-    }
-
-    body {
-        padding: 2rem;
-    }
-
-    .radio-input {
-        font-size: 1.25rem;
-    }
-
-    .chalk-img {
-        height: 35vh;
-    }
-}
-
-/* PAGE DE JEU / BOARD */
+/***** ÉLÉMENTS PAGE DE JEU -  BOARD *****/
 
 .board-container {
     display: grid;
@@ -149,41 +165,6 @@ footer {
     filter: blur(1px);
 }
 
-/*BREAKPOINTS POUR LE BOARD*/
-@media screen and (max-width: 425px) {
-    .board-container {
-        width: 90%
-    }
-
-    .box {
-        height: 15vh;
-        font-size: 4rem;
-    }
-}
-
-@media screen and (min-width: 426px) {
-    .board-container {
-        width: 70%
-    }
-
-    .box {
-        height: 20vh;
-        font-size: 5rem;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .board-container {
-        width: 50%
-    }
-
-    .box {
-        height: 20vh;
-        font-size: 7rem;
-    }
-}
-
-/* ENLEVE LES LIGNES EXTERIEURES DU BOARD*/
 #box0, #box1, #box2 {
     border-top: none;
 }

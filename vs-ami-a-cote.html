@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jouer contre un ami à côté tic-tac-toe-by-Tiphaine</title>
+    <link rel="stylesheet " href="css/style.css">
+    <link rel="stylesheet " href="css/mediascreen.css">
+</head>
+<body>
+<main>
+    <header>
+        <h1>Tic Tac Toe</h1>
+    </header>
+    <section>
+        <div class="img-container">
+            <img src="img/craies-1920-1280.jpg" alt="Représente six craies de couleurs" class="chalk-img">
+        </div>
+    </section>
+    <section>
+        <form action="" method="post">
+            <fieldset>
+                <legend>Qui prend les X ?</legend>
+                <label for="name-x">
+                    <input type="text" name="name" id="name-x" placeholder="Ton prénom" required>
+                </label>
+                <legend>Choisis ta couleur</legend>
+                <label for="choice-color-x">
+                    <select name="choice-color" id="choice-color-x">
+                        <option value="red">Rouge</option>
+                        <option value="orange">Orange</option>
+                        <option value="yellow">Jaune</option>
+                        <option value="green">Vert</option>
+                        <option value="blue">Bleu</option>
+                        <option value="purple">Violet</option>
+                    </select>
+                </label>
+            </fieldset>
+            <HR>
+            <fieldset>
+                <legend>Qui prend les O ?</legend>
+                <label for="name-o">
+                    <input type="text" name="name" id="name-o" placeholder="Ton prénom" required>
+                </label>
+                <legend>Choisis ta couleur</legend>
+                <label for="choice-color-o">
+                    <select name="choice-color" id="choice-color-o">
+                        <option value="red">Rouge</option>
+                        <option value="orange">Orange</option>
+                        <option value="yellow">Jaune</option>
+                        <option value="green">Vert</option>
+                        <option value="blue">Bleu</option>
+                        <option value="purple">Violet</option>
+                    </select>
+                </label>
+            </fieldset>
+        </form>
+    </section>
+    <button class="button-next-page" type="button">COMMENCER</button>
+    <button class="button-previous-page" type="button"><img src="img/previous-page.png" alt="flèche bouton retour arrière" id="img-previous-page"></button>
+</main>
+<footer>© Tiphaine du Réau 2022</footer>
+
+<script src="script/script-pages.js"></script>
+<script src="script/script-game.js"></script>
+</body>
+</html>
