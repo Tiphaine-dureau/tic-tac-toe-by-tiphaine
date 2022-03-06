@@ -1,6 +1,7 @@
 /***** ELEMENTS  COMMUNS AUX PAGES *****/
 * {
     box-sizing: border-box;
+
 }
 
 body {
@@ -8,9 +9,8 @@ body {
     text-align: center;
     font-family: Chalkduster, sans-serif;
     color: white;
-    background-repeat: no-repeat;
     height: 100vh;
-    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.87);
 }
 
 h1, h2 {
@@ -22,13 +22,25 @@ main {
     max-width: 1900px;
 }
 
+.button-previous-page {
+    background: white;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+#img-previous-page {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 footer {
     padding: 1rem;
     font-size: 0.8rem;
-    margin: 1rem;
-    position: absolute;
-    bottom: 0;
+    margin: 0;
     width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 /***** ELEMENTS PAGE ACCUEIL*****/
@@ -40,28 +52,17 @@ footer {
 .button-next-page {
     font-family: Chalkduster, sans-serif;
     background-color: white;
-    margin: 1rem;
+    margin-bottom: 1rem;
 }
 
-.button-next-page:hover, .button-previous-page:hover{
+.button-next-page:hover, .button-previous-page:hover, .start-again:hover {
     background-color: #fdffa5;
 }
 
-.button-next-page:active, .button-previous-page:active{
+.button-next-page:active, .button-previous-page:active, .start-again:active {
     background-color: #b6d881;
 }
 
-.button-previous-page {
-    background: white;
-    position: fixed;
-    bottom : 5rem;
-    right: 2rem;
-}
-
-#img-previous-page{
-    width: 1.5rem;
-    height: 1.5rem;
-}
 
 /***** ÉLÉMENTS PAGE VS ORDI *****/
 
@@ -122,31 +123,34 @@ input:checked + .slider:before {
 }
 
 .text-switch {
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 1rem;
 }
 
 /***** ÉLÉMENTS PAGE VS AMI A CÔTÉ *****/
 
-form{
+form {
     padding: 1rem;
 }
 
-fieldset{
+fieldset {
     border: none;
 }
 
-#name-x, #name-o, #choice-color-x, #choice-color-o{
+#name-x, #name-o, #choice-color-x, #choice-color-o {
     font-family: Chalkduster, sans-serif;
+    padding: 0.5rem;
+    margin: 0.5rem;
 }
 
 HR {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 50%;
     height: 4px;
     color: white;
     background-color: white;
 }
+
 
 /***** ÉLÉMENTS PAGE DE JEU -  BOARD *****/
 
@@ -162,7 +166,6 @@ HR {
 
 .box {
     border: white solid 4px;
-    filter: blur(1px);
 }
 
 #box0, #box1, #box2 {
@@ -179,4 +182,25 @@ HR {
 
 #box2, #box5, #box8 {
     border-right: none;
+}
+
+.start-again {
+    background: white;
+    z-index: 2;
+}
+
+#img-start-again {
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 1;
+}
+
+#modal-rules{
+    font-family: Chalkduster, sans-serif;
+    font-size: 1rem;
+}
+
+.container-btn{
+    display: flex;
+    justify-content: space-around;
 }
