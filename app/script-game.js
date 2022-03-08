@@ -1,6 +1,5 @@
 // Charger les informations du jeu
 const status = document.querySelector(".display-player-turn");
-let activePlayer = "x";
 let activeGame = true;
 let boxStatus = ["", "", "", "", "", "", "", "", ""];
 
@@ -19,7 +18,14 @@ const casesForWin = [
 const winGame = () => `${activePlayer} gagne !`;
 const lostGame = () => `Vous avez perdu =(`;
 const equality = () => "Égalité ! ";
-const playerTurn = () => ` Tour de ${activePlayer}`;
+const playerTurn = () => `Tour de ${activePlayer}`;
+
+//Récupération données username de l'URL
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const usernameX = urlParams.get('usernameX');
+const usernameO = urlParams.get('usernameO');
+let activePlayer = usernameX;
 
 //Indique dynamiquement qui est le joueur qui joue sur la page
 status.innerHTML = playerTurn();
@@ -39,8 +45,9 @@ function clickbox(cell) {
     if (boxStatus[cellIndex] !== "" || !activeGame) {
         return
     }
-    boxStatus[cellIndex] = activePlayer;
-    cell.innerHTML = activePlayer;
+    const cellValue = activePlayer === usernameX ? 'X' : 'O';
+    boxStatus[cellIndex] = cellValue;
+    cell.innerHTML = cellValue;
 
     checkWin();
 }
@@ -73,12 +80,12 @@ function checkWin() {
         return
     }
     //Gestion du changement de joueur
-    activePlayer = activePlayer === "x" ? "o" : "x"
+    activePlayer = activePlayer === usernameX ? usernameO : usernameX;
     status.innerHTML = playerTurn();
 }
 
 function startAgain() {
-    activePlayer = "x";
+    activePlayer = usernameX;
     activeGame = true;
     boxStatus = ["", "", "", "", "", "", "", "", ""];
     status.innerHTML = playerTurn();
@@ -86,6 +93,7 @@ function startAgain() {
 
 }
 
+// Création alert pour afficher les règles sur boutton ?
 let modalRules = document.getElementById("modal-rules")
 function appearModal () {
     alert("Le but du jeu est d'aligner avant son adversaire 3 symbôles identiques horizontalement, verticalement ou en diagonale")

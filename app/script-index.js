@@ -14,21 +14,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
  */
 
-// PAGE INDEX : CHOIX BOUTON RADIO
-let form = document.querySelector('form');
+// CHOIX BOUTON RADIO & EVENEMENT SUBMIT SELON CHOIX
+let formChoiceOpponent = document.querySelector('form');
 let btnRadio = document.querySelectorAll('input[type="radio"]');
 let isOpponentFriend = true;
 
 btnRadio.forEach((btnRadio) => {
     btnRadio.addEventListener('change', function (event) {
         isOpponentFriend = event.target.id === "friend"
-        console.log(isOpponentFriend);
     });
 })
 
 btnRadio[0].checked = isOpponentFriend;
 
-form.addEventListener('submit', (event) => {
+formChoiceOpponent.addEventListener('submit', (event) => {
     event.preventDefault()
     if (isOpponentFriend) {
         document.location.href = "vs-ami-a-cote.html";
