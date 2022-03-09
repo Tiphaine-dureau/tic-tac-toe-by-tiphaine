@@ -14,7 +14,7 @@ const casesForWin = [
     [2, 4, 6]
 ];
 
-//Messages à afficher
+//Messages affichés dynamiquement sur la page
 const winGame = () => `${activePlayer} gagne !`;
 const lostGame = () => `Vous avez perdu =(`;
 const equality = () => "Égalité ! ";
@@ -81,6 +81,7 @@ function checkWin() {
         }
         if (value1 === value2 && value2 === value3) {
             winTour = true;
+            document.body.style.backgroundImage = "url('assets/images/fireworks-1920-1080.jpg')";
             break
         }
     }
@@ -108,6 +109,7 @@ function startAgain() {
     boxStatus = ["", "", "", "", "", "", "", "", ""];
     status.innerHTML = playerTurn();
     document.querySelectorAll(".box").forEach(cell => cell.innerHTML = "");
+    document.body.style.backgroundImage = "url('assets/images/board-1280-853.jpg')";
 }
 
 // Création alert pour afficher les règles sur boutton ?
@@ -116,5 +118,7 @@ let modalRules = document.getElementById("modal-rules")
 function appearModal() {
     alert("Le but du jeu est d'aligner avant son adversaire 3 symbôles identiques horizontalement, verticalement ou en diagonale")
 }
-
 modalRules.addEventListener('click', appearModal)
+
+//Changement background image quand partie gagnée
+
