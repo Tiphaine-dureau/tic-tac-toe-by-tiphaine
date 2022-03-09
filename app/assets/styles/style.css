@@ -59,11 +59,11 @@ footer {
     margin-bottom: 1rem;
 }
 
-.button-next-page:hover, .button-previous-page:hover, .start-again:hover, .btn-menu:hover {
+.button-next-page:hover, .button-previous-page:hover, .start-again:hover, .btn-menu:hover, #modal-rules:hover {
     background-color: #fdffa5;
 }
 
-.button-next-page:active, .button-previous-page:active, .start-again:active, .btn-menu:active {
+.button-next-page:active, .button-previous-page:active, .start-again:active, .btn-menu:active, #modal-rules:active {
     background-color: #b6d881;
 }
 
@@ -157,9 +157,7 @@ HR {
 
 /***** ÉLÉMENTS PAGE DE JEU -  BOARD *****/
 
-.btn-menu{
-    z-index: 2;
-}
+
 
 .board-container {
     display: grid;
@@ -191,20 +189,15 @@ HR {
     border-right: none;
 }
 
-.start-again {
-    background: white;
+.btn-menu, .start-again ,#modal-rules{
     z-index: 2;
 }
 
-#img-start-again, #img-menu{
+#img-start-again, #img-menu, #img-btn-question{
     width: 1.5rem;
     height: 1.5rem;
     z-index: 1;
-}
-
-#modal-rules{
-    font-family: Chalkduster, sans-serif;
-    font-size: 1rem;
+    vertical-align: middle;
 }
 
 .container-btn{
