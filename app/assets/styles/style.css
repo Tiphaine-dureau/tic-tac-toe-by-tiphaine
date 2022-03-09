@@ -1,7 +1,6 @@
 /***** ELEMENTS  COMMUNS AUX PAGES *****/
 * {
     box-sizing: border-box;
-
 }
 
 body {
@@ -26,7 +25,6 @@ main {
 }
 
 .button-previous-page {
-    background: white;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -154,10 +152,7 @@ HR {
     background-color: white;
 }
 
-
 /***** ÉLÉMENTS PAGE DE JEU -  BOARD *****/
-
-
 
 .board-container {
     display: grid;

@@ -22,7 +22,6 @@ function f_valid(event){
 }
 
 //Gestion des listes déroulantes
-// Ne marche pas
 
 let colorListX = document.getElementById("choice-color-x");
 let colorListO= document.getElementById('choice-color-o');

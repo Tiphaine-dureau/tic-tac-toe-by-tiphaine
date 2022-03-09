@@ -27,6 +27,24 @@ const usernameX = urlParams.get('usernameX');
 const usernameO = urlParams.get('usernameO');
 let activePlayer = usernameX;
 
+//Récupération données couleurs de l'URL
+const choiceColorX = urlParams.get('colorListX');
+const choiceColorO = urlParams.get('colorListO');
+let xColor;
+let oColor;
+
+const colorsMap = {
+    "red": "#F67FB8",
+    "orange" : "#F99865",
+    "yellow": "#FDFFA5",
+    "green" : "#B6D881",
+    "blue" : "#8DEEFF",
+    "purple": "#A285E1",
+}
+
+xColor = colorsMap[choiceColorX];
+oColor = colorsMap[choiceColorO];
+
 //Indique dynamiquement qui est le joueur qui joue sur la page
 status.innerHTML = playerTurn();
 
@@ -39,8 +57,8 @@ document.querySelector(".start-again").addEventListener("click", startAgain);
 function clickbox(cell) {
     //récupère l'index de la case cliquée
     const cellId = cell.getAttribute("id");
+    document.getElementById(cellId).style.color = activePlayer === usernameX ? xColor : oColor;
     const cellIndex = parseInt(cellId.substr(3, 1));
-    console.log(cellIndex);
     // Vérifier si il y a déjà un élement sur la case ou que le jeu n'est pas actif
     if (boxStatus[cellIndex] !== "" || !activeGame) {
         return
