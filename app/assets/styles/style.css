@@ -55,14 +55,15 @@ footer {
 .button-next-page {
     font-family: Chalkduster, sans-serif;
     background-color: white;
+    color: black ;
     margin-bottom: 1rem;
 }
 
-.button-next-page:hover, .button-previous-page:hover, .start-again:hover {
+.button-next-page:hover, .button-previous-page:hover, .start-again:hover, .btn-menu:hover {
     background-color: #fdffa5;
 }
 
-.button-next-page:active, .button-previous-page:active, .start-again:active {
+.button-next-page:active, .button-previous-page:active, .start-again:active, .btn-menu:active {
     background-color: #b6d881;
 }
 
@@ -156,6 +157,10 @@ HR {
 
 /***** ÉLÉMENTS PAGE DE JEU -  BOARD *****/
 
+.btn-menu{
+    z-index: 2;
+}
+
 .board-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -191,7 +196,7 @@ HR {
     z-index: 2;
 }
 
-#img-start-again {
+#img-start-again, #img-menu{
     width: 1.5rem;
     height: 1.5rem;
     z-index: 1;
