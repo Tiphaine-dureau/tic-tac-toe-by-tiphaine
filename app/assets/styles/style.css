@@ -10,7 +10,10 @@ body {
     font-family: Chalkduster, sans-serif;
     color: white;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.87);
+    background-image: url("../images/board.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1, h2 {
@@ -127,7 +130,6 @@ input:checked + .slider:before {
 }
 
 /***** ÉLÉMENTS PAGE VS AMI A CÔTÉ *****/
-
 form {
     padding: 1rem;
 }

@@ -15,6 +15,7 @@ MAQUETTE DU PROJET VERSION DESKTOP
 
 SERVEUR NODE.JS :
 -tapez la commande node server.js
+-npm start
 -Ouvrir navigateur et taper localhost:3000 pour lui envoyer une requête
 
 FRAMEWORK NODE : EXPRESS :

@@ -90,12 +90,13 @@ function startAgain() {
     boxStatus = ["", "", "", "", "", "", "", "", ""];
     status.innerHTML = playerTurn();
     document.querySelectorAll(".box").forEach(cell => cell.innerHTML = "");
-
 }
 
 // Création alert pour afficher les règles sur boutton ?
 let modalRules = document.getElementById("modal-rules")
-function appearModal () {
+
+function appearModal() {
     alert("Le but du jeu est d'aligner avant son adversaire 3 symbôles identiques horizontalement, verticalement ou en diagonale")
 }
+
 modalRules.addEventListener('click', appearModal)
