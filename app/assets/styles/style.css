@@ -10,7 +10,7 @@ body {
     font-family: Chalkduster, sans-serif;
     color: white;
     height: 100vh;
-    background-image: url("../images/board.jpg");
+    background-image: url("app/assets/images/board-1280-853.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
