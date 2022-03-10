@@ -120,5 +120,5 @@ function appearModal() {
 }
 modalRules.addEventListener('click', appearModal)
 
-//BUG : changement de la couleur quand on clique deux fois sur la même case
+
 
