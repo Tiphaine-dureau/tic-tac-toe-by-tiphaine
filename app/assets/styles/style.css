@@ -45,6 +45,8 @@ footer {
 }
 
 /***** ELEMENTS PAGE ACCUEIL*****/
+
+/*Boutons*/
 .radio-input {
     margin: 0;
     padding: 1rem;
@@ -68,6 +70,7 @@ footer {
 
 /***** ÉLÉMENTS PAGE VS ORDI *****/
 
+/* Toogle  */
 .switch-button {
     display: flex;
     justify-content: center;
@@ -127,8 +130,11 @@ input:checked + .slider:before {
 .text-switch {
     padding: 2rem 2rem 2rem 1rem;
 }
+/* Fin toogle  */
 
 /***** ÉLÉMENTS PAGE VS AMI A CÔTÉ *****/
+
+/*Formulaire*/
 form {
     padding: 1rem;
 }
@@ -143,6 +149,7 @@ fieldset {
     margin: 0.5rem;
 }
 
+/*Barre de séparation horizontale*/
 HR {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -152,8 +159,9 @@ HR {
     background-color: white;
 }
 
-/***** ÉLÉMENTS PAGE DE JEU -  BOARD *****/
+/***** ÉLÉMENTS PAGE DE JEU - BOARD *****/
 
+/*Board*/
 .board-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -183,7 +191,9 @@ HR {
 #box2, #box5, #box8 {
     border-right: none;
 }
+/*Fin board*/
 
+/*Boutons*/
 .btn-menu, .start-again ,#modal-rules{
     z-index: 2;
 }

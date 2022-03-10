@@ -14,11 +14,13 @@
     <header>
         <h1>Tic Tac Toe</h1>
     </header>
-    <section>
-        <div class="img-container">
+    <div>
+        <picture>
+            <source srcset="assets/images/craies-640-426.jpg" media="(max-width : 767px)" class="chalk-img">
+            <source srcset="assets/images/craies-1280-853.jpg" media="(max-width : 1023px)" class="chalk-img">
             <img src="assets/images/craies-1920-1280.jpg" alt="Représente six craies de couleurs" class="chalk-img">
-        </div>
-    </section>
+        </picture>
+    </div>
     <section>
         <form action="" method="post">
             <fieldset>
@@ -58,15 +60,21 @@
             </fieldset>
             <button class="button-next-page" id="validationForm" type="submit">COMMENCER</button>
         </form>
+        <a href="index.html">
+            <button class="button-previous-page" type="button"><img src="assets/images/previous-page.png"
+                                                                    alt="flèche bouton retour arrière"
+                                                                    id="img-previous-page">
+            </button>
+        </a>
     </section>
-    <a href="index.html">
-        <button class="button-previous-page" type="button"><img src="assets/images/previous-page.png"
-                                                                alt="flèche bouton retour arrière"
-                                                                id="img-previous-page">
-        </button>
-    </a>
 </main>
 
 <script src="script-vs-ami.js"></script>
+<noscript>
+    <p>
+        Merci d'activer JavaScript afin de bénéficier de toutes les
+        fonctionnalités du site.
+    </p>
+</noscript>
 </body>
 </html>
