@@ -109,7 +109,7 @@ function startAgain() {
     boxStatus = ["", "", "", "", "", "", "", "", ""];
     status.innerHTML = playerTurn();
     document.querySelectorAll(".box").forEach(cell => cell.innerHTML = "");
-    document.body.style.backgroundImage = "url('assets/images/board-1280-853.jpg')";
+    document.body.style.backgroundImage ='';
 }
 
 // Création alert pour afficher les règles sur boutton ?
