@@ -15,6 +15,10 @@ function f_valid(event){
         alert('Veuillez indiquer le prénom du joueur O');
         return;
     }
+    if(usernameX.value === usernameO.value){
+        alert('Veuillez choisir des prénoms différents');
+        return;
+    }
     // Formulaire valide => ouvre la page board-game avec les username dans l'url
     console.log(usernameX.value);
     console.log(usernameO.value);
