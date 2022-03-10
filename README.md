@@ -6,10 +6,11 @@ TRELLO DU PROJET
 
 
 MAQUETTE DU PROJET VERSION MOBILE
-<img width="957" alt="maquette-mobile" src="https://user-images.githubusercontent.com/90333029/155152719-9ec35a1a-6416-4739-ab39-266c06cc8151.png">
+<img width="949" alt="mobile-maquette" src="https://user-images.githubusercontent.com/90333029/157707954-c35b3d3d-a023-442c-be05-379ec7b7d92b.png">
+
 
 MAQUETTE DU PROJET VERSION DESKTOP
-<img width="950" alt="maquette-desktop" src="https://user-images.githubusercontent.com/90333029/155152823-1121c362-2a01-4869-a216-39295aa9a303.png">
+<img width="924" alt="desktop-maquette" src="https://user-images.githubusercontent.com/90333029/157708008-fe75ac3e-5cc5-4843-b5d8-eb1e900c1544.png">
 
 ------MEMO------
 
