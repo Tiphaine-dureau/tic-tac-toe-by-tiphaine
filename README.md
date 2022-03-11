@@ -6,11 +6,9 @@ TRELLO DU PROJET
 
 
 MAQUETTE DU PROJET VERSION MOBILE
-<img width="957" alt="maquette-mobile" src="https://user-images.githubusercontent.com/90333029/155152719-9ec35a1a-6416-4739-ab39-266c06cc8151.png">
-
+![](../../../../Screenshots/mobile-maquette.png)
 MAQUETTE DU PROJET VERSION DESKTOP
-<img width="950" alt="maquette-desktop" src="https://user-images.githubusercontent.com/90333029/155152823-1121c362-2a01-4869-a216-39295aa9a303.png">
-
+![](../../../../Screenshots/desktop-maquette.png)
 ------MEMO------
 
 SERVEUR NODE.JS :
