@@ -1,4 +1,4 @@
-/***** ELEMENTS  COMMUNS AUX PAGES *****/
+/***** ELEMENTS  COMMUNS A CERTAINES PAGES *****/
 * {
     box-sizing: border-box;
 }
@@ -21,10 +21,20 @@ main {
     max-width: 1900px;
 }
 
+.chalk-img {
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+.button-next-page {
+    filter: drop-shadow(0 0 0.20rem #bae372);
+    padding: 0.3rem 1rem;
+    font-size: 1.25rem;
+}
+
 .button-previous-page {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 1.75rem;
+    right: 1.75rem;
 }
 
 #img-previous-page {

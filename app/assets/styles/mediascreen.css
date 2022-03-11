@@ -1,33 +1,6 @@
 /* BREAKPOINT POUR ÉLÉMENTS DES PAGES  */
 
-@media screen and (max-width: 362px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.25rem;
-    }
-    .chalk-img {
-        width: 100%;
-        height: 20vh;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        object-fit: cover;
-    }
-
-    .radio-input {
-        font-size: 1rem;
-    }
-
-    .button-next-page {
-        padding: 0.3rem 1rem;
-        font-size: 1rem;
-    }
-
-}
-
-@media screen and (min-width: 363px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
     h1 {
         font-size: 2rem;
     }
@@ -37,33 +10,15 @@
     }
 
     .chalk-img {
-        height: 20vh;
-    }
-}
-
-@media screen and (min-width: 363px) {
-    .button-next-page {
-        padding: 0.3rem 1rem;
-        font-size: 1.25rem;
-    }
-
-    .chalk-img {
-        width: 80%;
+        width: 100%;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         object-fit: cover;
+        height: 30vh;
     }
 
-    .radio-input {
+    .radio-input, .text-switch, form {
         font-size: 1.25rem;
-    }
-
-    .switch-button {
-        font-size: 1.25rem;
-    }
-
-    fieldset{
-        font-size: 1.25rem ;
     }
 }
 
@@ -73,11 +28,18 @@
     }
 
     h2 {
-        font-size: 2.125rem;
+        font-size: 2rem;
     }
 
     .chalk-img {
         height: 35vh;
+        width: 80%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        object-fit: cover;
+    }
+    .radio-input, .text-switch, form {
+        font-size: 1.5rem;
     }
 }
 
