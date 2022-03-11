@@ -34,9 +34,8 @@
     .chalk-img {
         height: 35vh;
         width: 80%;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
         object-fit: cover;
+        border-radius: 20px ;
     }
     .radio-input, .text-switch, form {
         font-size: 1.5rem;
