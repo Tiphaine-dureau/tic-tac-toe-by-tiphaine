@@ -16,8 +16,8 @@ const casesForWin = [
 
 //Messages affichés dynamiquement sur la page
 const winGame = () => `${activePlayer} gagne !`;
-const lostGame = () => `Vous avez perdu =(`;
-const equality = () => "Égalité ! ";
+const lostGame = () => "Vous avez perdu =(";
+const equality = () => "Égalité !";
 const playerTurn = () => `Tour de ${activePlayer}`;
 
 //Récupération données username de l'URL
@@ -35,10 +35,10 @@ let oColor;
 
 const colorsMap = {
     "red": "#F67FB8",
-    "orange" : "#F99865",
+    "orange": "#F99865",
     "yellow": "#FDFFA5",
-    "green" : "#B6D881",
-    "blue" : "#8DEEFF",
+    "green": "#B6D881",
+    "blue": "#8DEEFF",
     "purple": "#A285E1",
 }
 
@@ -81,13 +81,13 @@ function checkWin() {
         }
         if (value1 === value2 && value2 === value3) {
             winTour = true;
-            document.body.style.backgroundImage = "url('assets/images/fireworks-1920-1080.jpg')";
             break
         }
     }
     //Gestion de tour gagnant
     if (winTour) {
-        status.innerHTML = winGame()
+        status.innerHTML = winGame();
+        status.classList.add('win-animation');
         activeGame = false;
         return
     }
@@ -109,7 +109,7 @@ function startAgain() {
     boxStatus = ["", "", "", "", "", "", "", "", ""];
     status.innerHTML = playerTurn();
     document.querySelectorAll(".box").forEach(cell => cell.innerHTML = "");
-    document.body.style.backgroundImage ='';
+    status.classList.remove('win-animation');
 }
 
 // Création alert pour afficher les règles sur boutton ?
@@ -118,6 +118,7 @@ let modalRules = document.getElementById("modal-rules")
 function appearModal() {
     alert("Le but du jeu est d'aligner avant son adversaire 3 symbôles identiques horizontalement, verticalement ou en diagonale")
 }
+
 modalRules.addEventListener('click', appearModal)
 
 

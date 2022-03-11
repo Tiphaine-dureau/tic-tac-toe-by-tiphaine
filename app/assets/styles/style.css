@@ -198,6 +198,32 @@ HR {
 #box2, #box5, #box8 {
     border-right: none;
 }
+
+.win-animation {
+    animation: win-animation 0.3s linear infinite both;
+}
+
+@keyframes win-animation {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
 /*Fin board*/
 
 /*Boutons*/
