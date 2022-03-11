@@ -1,11 +1,14 @@
-//Gestion des inputs text : name
-
 let usernameX = document.getElementById('name-x');
 let usernameO = document.getElementById('name-o');
 let validationForm = document.getElementById('validationForm');
 
-validationForm.addEventListener('click', f_valid);
-function f_valid(event){
+validationForm.addEventListener('click', formValidation);
+
+/**
+ * Vérifie les données du formulaire avant envoi
+ * @param event
+ */
+function formValidation(event){
     event.preventDefault();
     if(usernameX.validity.valueMissing){
         alert('Veuillez indiquer le prénom du joueur X');
@@ -19,14 +22,11 @@ function f_valid(event){
         alert('Veuillez choisir des prénoms différents');
         return;
     }
-    // Formulaire valide => ouvre la page board-game avec les username dans l'url
-    console.log(usernameX.value);
-    console.log(usernameO.value);
+    // Formulaire valide => ouvre la page board-game avec les username et les couleurs dans l'url
     window.location.href = `board-game.html?usernameX=${usernameX.value}&usernameO=${usernameO.value}&colorListX=${colorListX.value}&colorListO=${colorListO.value}`;
 }
 
 //Gestion des listes déroulantes
-
 let colorListX = document.getElementById("choice-color-x");
 let colorListO= document.getElementById('choice-color-o');
 
