@@ -4,11 +4,12 @@ Défi STUDI 02/2022 tic-tac-toe
 TRELLO DU PROJET 
 ![Trello](https://user-images.githubusercontent.com/90333029/154997072-92e5aa8f-a0dd-4303-beac-d439049e2f06.png)
 
-
 MAQUETTE DU PROJET VERSION MOBILE
-![](../../../../Screenshots/mobile-maquette.png)
+<img width="949" alt="mobile-maquette" src="https://user-images.githubusercontent.com/90333029/157853763-52b0fa95-dd36-4503-9914-a3b8756fa060.png">
+
 MAQUETTE DU PROJET VERSION DESKTOP
-![](../../../../Screenshots/desktop-maquette.png)
+<img width="924" alt="desktop-maquette" src="https://user-images.githubusercontent.com/90333029/157853904-6619921b-dd50-4a35-9d77-05ea59cb7892.png">
+
 ------MEMO------
 
 SERVEUR NODE.JS :
