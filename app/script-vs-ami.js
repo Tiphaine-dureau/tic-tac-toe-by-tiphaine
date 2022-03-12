@@ -23,7 +23,7 @@ function formValidation(event){
         return;
     }
     // Formulaire valide => ouvre la page board-game avec les username et les couleurs dans l'url
-    window.location.href = `board-game.html?usernameX=${usernameX.value}&usernameO=${usernameO.value}&colorListX=${colorListX.value}&colorListO=${colorListO.value}`;
+    redirectToGame(usernameX.value, usernameO.value, colorListX.value, colorListO.value);
 }
 
 //Gestion des listes déroulantes

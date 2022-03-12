@@ -1,15 +1,8 @@
-/* Page VS ORDI : bouton toogle switch
-document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelector('input[type="checkbox"]');
+const validateChoiceFirstPlayer = document.getElementById('validateChoiceFirstPlayer');
 
-  checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      // do this
-      console.log('Checked');
-    } else {
-      // do that
-      console.log('Not checked');
-    }
-  });
-});
- */
+validateChoiceFirstPlayer.addEventListener('click', submit);
+
+function submit() {
+    const checkbox = document.querySelector('input[type="checkbox"]');
+    redirectToGame("X", "Pifomètre", "blue", "orange", checkbox.checked);
+}
