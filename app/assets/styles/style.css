@@ -16,7 +16,7 @@ body {
 
 h1, h2 {
     margin: 0;
-    padding: 1.3rem;
+    padding: 1.5rem;
 }
 
 main {
@@ -24,7 +24,7 @@ main {
 }
 
 .chalk-img {
-    filter: drop-shadow(0 0 0.75rem);
+    filter: drop-shadow(0 0 0.75rem white);
 }
 
 .button-next-page {
