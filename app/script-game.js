@@ -15,6 +15,7 @@ let xColor;
 let oColor;
 let vsHuman = false;
 let shouldPlayerStartAgainstIA = false;
+let canClick = false;
 
 /**
  * ######################
@@ -25,7 +26,7 @@ let shouldPlayerStartAgainstIA = false;
 /**
  * Affiche dynamiquement le joueur actif
  */
-function initPlayerTurnLabel() {
+function setPlayerTurnLabel() {
     status.innerHTML = `Tour de ${activePlayer}`;
 }
 
@@ -33,10 +34,9 @@ function initPlayerTurnLabel() {
  * Gères les affichages du DOM
  */
 function handleDom() {
-    // Charger les informations du jeu
     status = document.querySelector(".display-player-turn");
     // Créer pour chaques cases un évènement au clic
-    document.querySelectorAll(".box").forEach(cell => cell.addEventListener("click", () => clickBox(cell)));
+    document.querySelectorAll(".box").forEach(cell => cell.addEventListener("click", () => onBoxClicked(cell)));
     // Crer un évènement au click pour le bouton recommencer
     document.querySelector(".start-again").addEventListener("click", startAgain);
     const modalRules = document.getElementById("modal-rules");
@@ -44,7 +44,7 @@ function handleDom() {
 }
 
 /**
- * Récupère les données de l'url (couleurs et noms des joueurs)
+ * Récupère les données de l'url
  */
 function saveUrlParams() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -93,44 +93,50 @@ function initVsHuman() {
     vsHuman = shouldPlayerStartAgainstIA === null;
 }
 
+function playIA() {
+    const emptyBoxIndexes = [];
+    for (const [index, value] of boxStatus.entries()) {
+        if (value === "") {
+            emptyBoxIndexes.push(index);
+        }
+    }
+    const randomEmptyBoxIndex = emptyBoxIndexes[Math.floor(Math.random() * emptyBoxIndexes.length)];
+    handleBox(randomEmptyBoxIndex);
+}
 
 /**
  * Initialisation des paramètres du jeu
  */
 function init() {
-    handleDom();
     saveUrlParams();
     initVsHuman();
     initActivePlayer();
     initPlayerColors();
-    initPlayerTurnLabel();
+    setPlayerTurnLabel();
+    handleFirstPlayAI();
 }
 
-/**
- * Vérifie le statut de la case et permet un click en fonction. A la fin appel une fonction pour vérifier s'il y a un gagnant ou une égalité
- * @param cell
- */
-function clickBox(cell) {
-    //récupère l'index de la case cliquée
-    const cellId = cell.getAttribute("id");
-    const cellIndex = parseInt(cellId.substr(3, 1));
+function handleFirstPlayAI() {
+    if (!vsHuman && shouldPlayerStartAgainstIA === "false") {
+        handleIATurn();
+    }
+    canClick = true;
+}
+
+function handleBox(cellIndex) {
     // Vérifier si il y a déjà un élement sur la case ou que le jeu n'est pas actif
     if (boxStatus[cellIndex] !== "" || !activeGame) {
         return
     }
-    document.getElementById(cellId).style.color = activePlayer === usernameX ? xColor : oColor;
+    const cell = document.getElementById(`box${cellIndex}`);
     const cellValue = activePlayer === usernameX ? 'X' : 'O';
     boxStatus[cellIndex] = cellValue;
     cell.innerHTML = cellValue;
-
-    checkWin();
+    cell.style.color = activePlayer === usernameX ? xColor : oColor;
 }
 
-/**
- * Vérifie si les conditions pour gagner ou pour une égalité sont actives puis gère le changement de joueur
- */
-function checkWin() {
-    let winTour = false;
+function hasWinner() {
+    let hasWinner = false;
     const casesForWin = [
         [0, 1, 2],
         [3, 4, 5],
@@ -149,38 +155,79 @@ function checkWin() {
             continue
         }
         if (value1 === value2 && value2 === value3) {
-            winTour = true;
+            hasWinner = true;
             break
         }
     }
-    //Gestion de tour gagnant
-    if (winTour) {
+    return hasWinner;
+}
+
+function isGameOver(hasWinner) {
+    const noCellAvailable = !boxStatus.includes("");
+    return hasWinner || noCellAvailable;
+}
+
+/**
+ * Vérifie le statut de la case et permet un click en fonction. A la fin appel une fonction pour vérifier s'il y a un gagnant ou une égalité
+ * @param cell
+ */
+function onBoxClicked(cell) {
+    if (canClick) {
+        //récupère l'index de la case cliquée
+        const cellId = cell.getAttribute("id");
+        const cellIndex = parseInt(cellId.substr(3, 1));
+        handleBox(cellIndex);
+        handleTurn();
+    }
+}
+
+function handleTurn(canAIPlay = true) {
+    const winner = hasWinner();
+    const gameOver = isGameOver(winner);
+    if (gameOver) {
+        handleGameOver(winner);
+    } else {
+        switchPlayer();
+        if (!vsHuman && canAIPlay) {
+            canClick = false
+            setTimeout(() => {
+                handleIATurn();
+                canClick = true;
+            }, 1000);
+        }
+    }
+}
+
+function handleIATurn() {
+    playIA();
+    handleTurn(false);
+}
+
+function switchPlayer() {
+    // Gestion du changement de joueur
+    activePlayer = activePlayer === usernameX ? usernameO : usernameX;
+    setPlayerTurnLabel();
+}
+
+function handleGameOver(hasWinner) {
+    activeGame = false;
+    if (!hasWinner) {
+        status.innerHTML = "Égalité !"
+    } else {
         status.innerHTML = `${activePlayer} gagne !`;
         status.classList.add('win-animation');
-        activeGame = false;
-        return
     }
-    //Gestion de l'égalité
-    if (!boxStatus.includes("")) {
-        status.innerHTML = "Égalité !"
-        activeGame = false;
-        return
-    }
-    //Gestion du changement de joueur
-    activePlayer = activePlayer === usernameX ? usernameO : usernameX;
-    initPlayerTurnLabel()
 }
 
 /**
  * Recommence le jeu et réinitilisation des valeurs
  */
 function startAgain() {
-    activePlayer = usernameX;
     activeGame = true;
     boxStatus = ["", "", "", "", "", "", "", "", ""];
-    initPlayerTurnLabel()
     document.querySelectorAll(".box").forEach(cell => cell.innerHTML = "");
     status.classList.remove('win-animation');
+    init();
 }
 
 /**
@@ -196,4 +243,5 @@ function appearModal() {
  * ######################
  */
 
+handleDom();
 init();
