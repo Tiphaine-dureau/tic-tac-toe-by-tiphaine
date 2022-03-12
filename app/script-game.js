@@ -13,6 +13,8 @@ let choiceColorO;
 let choiceColorX;
 let xColor;
 let oColor;
+let vsHuman = false;
+let shouldPlayerStartAgainstIA = false;
 
 /**
  * ######################
@@ -23,7 +25,7 @@ let oColor;
 /**
  * Affiche dynamiquement le joueur actif
  */
-function setPlayerTurnLabel() {
+function initPlayerTurnLabel() {
     status.innerHTML = `Tour de ${activePlayer}`;
 }
 
@@ -50,12 +52,13 @@ function saveUrlParams() {
     usernameO = urlParams.get('usernameO');
     choiceColorX = urlParams.get('colorListX');
     choiceColorO = urlParams.get('colorListO');
+    shouldPlayerStartAgainstIA = urlParams.get('playerStart');
 }
 
 /**
  * Assigne la couleur choisi aux joueurs
  */
-function setPlayerColors() {
+function initPlayerColors() {
     const colorsMap = {
         "red": "#F67FB8",
         "orange": "#F99865",
@@ -69,14 +72,38 @@ function setPlayerColors() {
 }
 
 /**
+ * Initialise le joueur actif en fonction du choix de l'utilisateur
+ */
+function initActivePlayer() {
+    if (vsHuman) {
+        activePlayer = usernameX;
+    } else {
+        if (shouldPlayerStartAgainstIA === "true") {
+            activePlayer = usernameX;
+        } else {
+            activePlayer = usernameO;
+        }
+    }
+}
+
+/**
+ * Initialise si la partie se joue contre un humain ou une IA
+ */
+function initVsHuman() {
+    vsHuman = shouldPlayerStartAgainstIA === null;
+}
+
+
+/**
  * Initialisation des paramètres du jeu
  */
 function init() {
     handleDom();
     saveUrlParams();
-    activePlayer = usernameX;
-    setPlayerColors();
-    setPlayerTurnLabel();
+    initVsHuman();
+    initActivePlayer();
+    initPlayerColors();
+    initPlayerTurnLabel();
 }
 
 /**
@@ -141,7 +168,7 @@ function checkWin() {
     }
     //Gestion du changement de joueur
     activePlayer = activePlayer === usernameX ? usernameO : usernameX;
-    setPlayerTurnLabel()
+    initPlayerTurnLabel()
 }
 
 /**
@@ -151,7 +178,7 @@ function startAgain() {
     activePlayer = usernameX;
     activeGame = true;
     boxStatus = ["", "", "", "", "", "", "", "", ""];
-    setPlayerTurnLabel()
+    initPlayerTurnLabel()
     document.querySelectorAll(".box").forEach(cell => cell.innerHTML = "");
     status.classList.remove('win-animation');
 }
