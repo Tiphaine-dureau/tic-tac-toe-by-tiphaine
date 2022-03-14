@@ -28,10 +28,13 @@ let canClick = false;
  */
 function setPlayerTurnLabel() {
     status.innerHTML = `Tour de ${activePlayer}`;
+    if(!vsHuman && activePlayer === usernameX ){
+        status.innerHTML = `À votre tour`;
+    }
 }
 
 /**
- * Gères les affichages du DOM
+ * Gères les évènements du DOM
  */
 function handleDom() {
     status = document.querySelector(".display-player-turn");
