@@ -28,7 +28,7 @@ let canClick = false;
  */
 function setPlayerTurnLabel() {
     status.innerHTML = `Tour de ${activePlayer}`;
-    if(!vsHuman && activePlayer === usernameX ){
+    if (!vsHuman && activePlayer === usernameX) {
         status.innerHTML = `À votre tour`;
     }
 }
@@ -245,6 +245,9 @@ function handleGameOver(hasWinner) {
     } else {
         status.innerHTML = `${activePlayer} gagne !`;
         status.classList.add('win-animation');
+    }
+    if (!vsHuman && activePlayer === "X") {
+        status.innerHTML = `Vous avez gagné!`;
     }
 }
 
