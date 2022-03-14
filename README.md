@@ -16,6 +16,7 @@ Comme le tic-tac-toe se joue principalement à l'école j'ai voulu reproduire ce
 
 Il existe deux façons de jouer : contre un ami à côté et contre l'ordinateur.  
 Sur la version conte l'ami à côté vous pourrez donner vos prénoms et choisir votre couleur.  
+Sur la version contre l'ordinateur, vous pouvez décider qui commence.
 
 Langages utilisés : HTML , CSS et javascript.  
 
@@ -44,3 +45,5 @@ Home : https://www.flaticon.com/free-icon/home_25694?term=home&page=1&position=3
 Previous png : https://imgbin.com/png/tvcraRGb/enter-key-button-arrow-png  
 L'image des craies et vient de Pixabay :  https://pixabay.com/fr/photos/craie-color%c3%a9-poussi%c3%a8re-l-%c3%a9cole-4829602/  
  
+_Dans un souci de performance au chargement de la page, j'ai préféré simplifier l'animation du gagnant plutôt que de mettre un background image qui mettait du temps à se charger.  
+Finalement je n'ai pas installé de base de données._ 
