@@ -93,6 +93,9 @@ function initVsHuman() {
     vsHuman = shouldPlayerStartAgainstIA === null;
 }
 
+/**
+ * Façon dont l'IA rempli les cases
+ */
 function playIA() {
     const emptyBoxIndexes = [];
     for (const [index, value] of boxStatus.entries()) {
@@ -116,6 +119,9 @@ function init() {
     handleFirstPlayAI();
 }
 
+/**
+ * Le joueur joue contre l'IA et l'IA commence
+ */
 function handleFirstPlayAI() {
     if (!vsHuman && shouldPlayerStartAgainstIA === "false") {
         handleIATurn();
@@ -123,8 +129,11 @@ function handleFirstPlayAI() {
     canClick = true;
 }
 
+/**
+ * Gère l'affichage des cases
+ * @param cellIndex
+ */
 function handleBox(cellIndex) {
-    // Vérifier si il y a déjà un élement sur la case ou que le jeu n'est pas actif
     if (boxStatus[cellIndex] !== "" || !activeGame) {
         return
     }
@@ -135,6 +144,10 @@ function handleBox(cellIndex) {
     cell.style.color = activePlayer === usernameX ? xColor : oColor;
 }
 
+/**
+ * Conditions pour gagner
+ * @returns {boolean}
+ */
 function hasWinner() {
     let hasWinner = false;
     const casesForWin = [
@@ -181,6 +194,10 @@ function onBoxClicked(cell) {
     }
 }
 
+/**
+ * Gère le changement de tour
+ * @param canAIPlay
+ */
 function handleTurn(canAIPlay = true) {
     const winner = hasWinner();
     const gameOver = isGameOver(winner);
@@ -198,17 +215,26 @@ function handleTurn(canAIPlay = true) {
     }
 }
 
+/**
+ * Gère le tour de l'IA
+ */
 function handleIATurn() {
     playIA();
     handleTurn(false);
 }
 
+/**
+ * Gestion du changement de joueur
+ */
 function switchPlayer() {
-    // Gestion du changement de joueur
     activePlayer = activePlayer === usernameX ? usernameO : usernameX;
     setPlayerTurnLabel();
 }
 
+/**
+ * Gère la fin de la partie
+ * @param hasWinner
+ */
 function handleGameOver(hasWinner) {
     activeGame = false;
     if (!hasWinner) {
