@@ -245,13 +245,14 @@ function handleGameOver(hasWinner) {
     } else {
         status.innerHTML = `${activePlayer} gagne !`;
         status.classList.add('win-animation');
+        if (!vsHuman && activePlayer === "X") {
+            status.innerHTML = `Vous avez gagné!`;
+        }
+        if (!vsHuman &&activePlayer ==="Pifomètre"){
+            status.innerHTML = `Vous avez perdu =(`;
+        }
     }
-    if (!vsHuman && activePlayer === "X") {
-        status.innerHTML = `Vous avez gagné!`;
-    }
-    if (!vsHuman &&activePlayer ==="Pifomètre" && hasWinner){
-        status.innerHTML = `Vous avez perdu =(`;
-    }
+
 }
 
 /**
