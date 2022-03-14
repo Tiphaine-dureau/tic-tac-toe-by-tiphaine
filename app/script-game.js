@@ -249,6 +249,9 @@ function handleGameOver(hasWinner) {
     if (!vsHuman && activePlayer === "X") {
         status.innerHTML = `Vous avez gagné!`;
     }
+    if (!vsHuman &&activePlayer ==="Pifomètre"){
+        status.innerHTML = `Vous avez perdu =(`;
+    }
 }
 
 /**
