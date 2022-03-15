@@ -183,6 +183,9 @@ HR {
 
 .box {
     border: white solid 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #box0, #box1, #box2 {
