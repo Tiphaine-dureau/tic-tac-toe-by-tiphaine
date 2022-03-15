@@ -14,7 +14,6 @@ body {
     font-family: Chalkduster, sans-serif;
     color: white;
     height: 100vh;
-    background: black;
     background: linear-gradient(to right, #434343, #000000);
 
 }
@@ -22,10 +21,6 @@ body {
 h1, h2 {
     margin: 0;
     padding: 1.5rem;
-}
-
-main {
-    max-width: 1900px;
 }
 
 .chalk-img {
