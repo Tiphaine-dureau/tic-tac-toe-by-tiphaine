@@ -226,6 +226,11 @@ HR {
     }
 }
 
+#animation{
+    display: flex ;
+    justify-content: center;
+}
+
 /*Fin board*/
 
 /*Boutons*/
