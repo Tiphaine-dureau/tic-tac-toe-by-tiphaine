@@ -22,6 +22,7 @@ Langages utilisés : HTML , CSS et javascript.
 
 ---- NOUVEAU DÉPLOIEMENT : NETLIFY ----  
 Le projet est maintenant hébergé sur Netlify suite à l'arrêt d'Heroku version gratuite.
+Lien du projet hébergé : https://tic-tac-toe-by-tiphaine.netlify.app/ 
 
 ---- ANCIEN DÉPLOIEMENT : HEROKU GRATUIT ----  
 Pour pouvoir déployer sur Heroku j'avais installé un serveur node avec express :  
